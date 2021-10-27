@@ -89,6 +89,8 @@ prev.addEventListener('click', function(){
     sideItems[counter].classList.add("selected");
     viewCard[counter].classList.add("active")
 });
+
+
 next.addEventListener('click', function(){
     let countPrev = counter;
     counter++;
@@ -98,3 +100,16 @@ next.addEventListener('click', function(){
     sideItems[counter].classList.add("selected");
     viewCard[counter].classList.add("active");
 });
+
+//piccola chicca ;)
+
+for(let i = 0; i < numElements; i++){
+    sideItems[i].addEventListener('click', function(){
+        let countPrev = counter;
+        counter = i;
+        sideItems[countPrev].classList.remove("selected");
+        viewCard[countPrev].classList.remove("active");
+        sideItems[counter].classList.add("selected");
+        viewCard[counter].classList.add("active");
+    });
+}
